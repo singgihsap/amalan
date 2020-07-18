@@ -1,0 +1,85 @@
+// -----------------------------------------------------------------------------
+// This file contains mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// BEM Methodology
+/// @access public
+/// @param {String} $element - Element's name
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+/// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+/// Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+/// FLEXBOX
+@mixin flexbox() {
+  .display-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@mixin align-self() {
+  .align-self-center {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+  }
+}
+
+@media (min-width: 760px) {
+  @include flexbox();
+}
+
+@include align-self();
+
+// MIXIN FONTS
+@mixin fonts($fonts) {
+  font-family: $fonts, sans-serif !important;
+}
+
+// MIXIN TRANSITION
+@mixin transition($transition) {
+  -webkit-transition: all $transition ease-in-out;
+  -moz-transition: all $transition ease-in-out;
+  -o-transition: all $transition ease-in-out;
+  transition: all $transition ease-in-out;
+}

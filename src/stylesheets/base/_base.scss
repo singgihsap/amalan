@@ -1,0 +1,19 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  transition: all 300ms ease-in-out;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  color: $text-color;
+  @include on-event {
+    text-decoration: none;
+  }
+}

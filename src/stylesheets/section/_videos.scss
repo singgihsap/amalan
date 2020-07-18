@@ -1,0 +1,14 @@
+.videos {
+  display: flex;
+  background-color: #5F73B4;
+  padding: 70px 0;
+
+  @media (max-width: 600px) {
+    padding: 40px 0;
+  }
+
+  @include element('content') {
+    width: 550px;
+    margin: auto;
+  }
+}

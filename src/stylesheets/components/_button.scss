@@ -1,0 +1,11 @@
+.btn {
+  &-primary {
+    background-color: #297DFE !important;
+    border-color: #297DFE !important;
+
+    @include on-event {
+      background-color: lighten(#297DFE, 5%) !important;
+      border-color: lighten(#297DFE, 5%) !important;
+    }
+  }
+}

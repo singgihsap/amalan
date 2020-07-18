@@ -1,0 +1,54 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+.footer {
+  @include element('wrap') {
+    display: flex;
+    padding: 45px 0;
+
+    @media (max-width: 768px) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  @include element('logo') {
+    align-self: center;
+  }
+
+  @include element('copyright') {
+    align-self: center;
+    margin-left: 8%;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 0;
+
+      @media (max-width: 768px) {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  @include element('social') {
+    align-self: center;
+    margin-left: auto;
+
+    ul {
+      margin-bottom: 0;
+
+      li {
+        display: inline-block;
+        margin: 0 15px;
+
+        a {
+          color: #8C8C8C;
+        }
+      }
+    }
+  }
+}

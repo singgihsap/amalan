@@ -1,0 +1,5 @@
+// for pages homepage
+.pages {
+  @include modifier('homepage') {
+  }
+}
